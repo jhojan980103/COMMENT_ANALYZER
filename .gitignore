@@ -1,0 +1,4 @@
+AplicarModelo.py
+ModeloSentimiento.pkl
+read_pickle.py
+TfidfVectorizer.pkl
