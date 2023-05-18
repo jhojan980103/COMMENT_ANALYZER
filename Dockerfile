@@ -2,13 +2,11 @@ FROM rocker/shiny:4.2.2
 
 RUN apt-get update && apt-get install \
   libcurl4-openssl-dev \
-  libcurl4-gnutls-dev \
   libv8-dev \
   curl -y \
   libpq-dev \
   libharfbuzz-dev \
   libfribidi-dev \
-  libssl-dev \
   libxml2-dev
 
 RUN mkdir -p /var/lib/shiny-server/bookmarks/shiny
