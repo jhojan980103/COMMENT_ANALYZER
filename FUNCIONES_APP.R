@@ -8,7 +8,7 @@ preproc.text <- function(x){
   library(tidyr)
   library(wordcloud)
   library(ggplot2)
-  #library(igraph)
+  library(igraph)
   library(ggraph)
   library(tictoc)
   library(Rtsne)

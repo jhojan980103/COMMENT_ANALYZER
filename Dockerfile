@@ -17,6 +17,7 @@ RUN R -e 'install.packages("remotes", repos="http://cran.rstudio.com")'
 # Descargar e instalar paquetes de R necesarios para el app
 RUN R -e 'remotes::install_version(package = "shiny", version = "1.7.4", dependencies = TRUE)'
 RUN R -e 'remotes::install_version(package = "tm", version = "0.7-11")'
+RUN R -e 'remotes::install_version(package = "igraph", version = "1.4.2")'
 RUN R -e 'remotes::install_version(package = "SnowballC", version = "0.7.0", dependencies = TRUE)'
 RUN R -e 'remotes::install_version(package = "wordcloud", version = "2.6", dependencies = TRUE)'
 RUN R -e 'remotes::install_version(package = "shinydashboard", version = "0.7.2", dependencies = TRUE)'
