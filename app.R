@@ -27,7 +27,6 @@ library(syuzhet)
 library(reshape2)
 library(SnowballC)
 library(stringr)
-library(quanteda)
 library(tidyverse)
 library(openxlsx)
 

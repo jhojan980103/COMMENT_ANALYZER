@@ -43,7 +43,6 @@ RUN R -e 'remotes::install_version(package = "rgl", version = "1.0.1", dependenc
 RUN R -e 'remotes::install_version(package = "syuzhet", version = "1.0.6", dependencies = TRUE)'
 RUN R -e 'remotes::install_version(package = "reshape2", version = "1.4.4", dependencies = TRUE)'
 RUN R -e 'remotes::install_version(package = "stringr", version = "1.5.0", dependencies = TRUE)'
-RUN R -e 'remotes::install_version(package = "quanteda", version = "3.3.0", dependencies = TRUE)'
 RUN R -e 'remotes::install_version(package = "tidyverse", version = "2.0.0", dependencies = TRUE)'
 RUN R -e 'remotes::install_version(package = "openxlsx", version = "4.2.5.2", dependencies = TRUE)'
 RUN R -e 'remotes::install_version(package = "reticulate", version = "1.28", dependencies = TRUE)'
