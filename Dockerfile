@@ -2,11 +2,13 @@ FROM rocker/shiny:4.2.2
 
 RUN apt-get update && apt-get install \
   libcurl4-openssl-dev \
+  libcurl4-gnutls-dev \
   libv8-dev \
   curl -y \
   libpq-dev \
   libharfbuzz-dev \
   libfribidi-dev \
+  libssl-dev \
   libxml2-dev
 
 RUN mkdir -p /var/lib/shiny-server/bookmarks/shiny
@@ -17,7 +19,7 @@ RUN R -e 'install.packages("remotes", repos="http://cran.rstudio.com")'
 # Descargar e instalar paquetes de R necesarios para el app
 RUN R -e 'remotes::install_version(package = "shiny", version = "1.7.4", dependencies = TRUE)'
 RUN R -e 'remotes::install_version(package = "tm", version = "0.7-11")'
-RUN R -e 'remotes::install_version(package = "igraph", version = "1.4.2")'
+RUN R -e "install.packages(c('igraph'), repos='http://cran.rstudio.com/')"
 RUN R -e 'remotes::install_version(package = "SnowballC", version = "0.7.0", dependencies = TRUE)'
 RUN R -e 'remotes::install_version(package = "wordcloud", version = "2.6", dependencies = TRUE)'
 RUN R -e 'remotes::install_version(package = "shinydashboard", version = "0.7.2", dependencies = TRUE)'
@@ -49,7 +51,7 @@ RUN R -e 'remotes::install_version(package = "openxlsx", version = "4.2.5.2", de
 RUN R -e 'remotes::install_version(package = "reticulate", version = "1.28", dependencies = TRUE)'
 
 # Copiar el app a la imagen de shinyapps /srv/shiny-server/
-COPY . /srv/shiny-server/
+COPY app/ /srv/shiny-server/
 COPY shiny-server.conf /etc/shiny-server/shiny-server.conf
 
 RUN chown shiny:shiny /srv/shiny-server/
