@@ -49,7 +49,7 @@ RUN R -e 'remotes::install_version(package = "openxlsx", version = "4.2.5.2", de
 RUN R -e 'remotes::install_version(package = "reticulate", version = "1.28", dependencies = TRUE)'
 
 # Copiar el app a la imagen de shinyapps /srv/shiny-server/
-COPY app/ /srv/shiny-server/
+COPY . /srv/shiny-server/
 COPY shiny-server.conf /etc/shiny-server/shiny-server.conf
 
 RUN chown shiny:shiny /srv/shiny-server/
