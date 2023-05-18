@@ -28,7 +28,6 @@ RUN R -e 'remotes::install_version(package = "tidytext", version = "0.4.1", depe
 RUN R -e 'remotes::install_version(package = "janeaustenr", version = "1.0.0", dependencies = TRUE)'
 RUN R -e 'remotes::install_version(package = "tidyr", version = "1.3.0", dependencies = TRUE)'
 RUN R -e 'remotes::install_version(package = "wordcloud2", version = "0.2.1", dependencies = TRUE)'
-RUN R -e 'remotes::install_version(package = "igraph", version = "1.4.2")'
 RUN R -e 'remotes::install_version(package = "ggraph", version = "2.1.0", dependencies = TRUE)'
 RUN R -e 'remotes::install_version(package = "tictoc", version = "1.1", dependencies = TRUE)'
 RUN R -e 'remotes::install_version(package = "Rtsne", version = "0.16", dependencies = TRUE)'
