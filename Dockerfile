@@ -1,7 +1,7 @@
 FROM rocker/shiny:4.2.2
 
 # Bibliotecas del sistema de uso general
-RUN apt-get update && apt-get install -y \
+RUN apt-get update && apt-get install \
     libcurl4-gnutls-dev \
     libssl-dev \
     libxml2-dev \
