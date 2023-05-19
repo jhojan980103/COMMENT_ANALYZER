@@ -1,24 +1,15 @@
 FROM rocker/shiny:4.2.2
 
-# Bibliotecas del sistema de uso general
 RUN apt-get update && apt-get install \
-    libcurl4-openssl-dev \
-    libssl-dev \
-    libxml2-dev \
-    libigraph0-dev \
-    libglu1-mesa-dev \
-    libx11-dev \
-    libudunits2-dev \
-    libpoppler-cpp-dev \
-    libtesseract-dev \
-    libleptonica-dev \
-    libprotobuf-dev \
-    protobuf-compiler \
-    libjq-dev \
-    libv8-dev \
-    libharfbuzz-dev \
-    libfribidi-dev \
-    libmagick++-dev
+  libcurl4-openssl-dev \
+  libv8-dev \
+  curl -y \
+  libpq-dev \
+  libharfbuzz-dev \
+  libfribidi-dev \
+  libxml2-dev
+
+RUN mkdir -p /var/lib/shiny-server/bookmarks/shiny
 
 # Instalar paquetes R
 RUN R -e "install.packages(c('shiny', 'shinydashboard', 'readxl', 'rstudioapi', 'dplyr', 'tidytext', \
